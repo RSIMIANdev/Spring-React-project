@@ -1,0 +1,15 @@
+services:
+  oop-db:
+    image: postgres:latest
+    container_name: oop-db
+    environment:
+      - POSTGRES_DB=oop-db
+      - POSTGRES_USER=newuser
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5433:5432"
+    volumes:
+      - oop-db-data:/var/lib/postgresql/data
+
+volumes:
+  oop-db-data:
